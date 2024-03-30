@@ -1,22 +1,21 @@
 <template>
   <form class="form" @submit.prevent>
-    <input
-      v-model="task.title"
-      class="form-input"
+    <h3>Форма для создания задачи</h3>
+    <my-input
+      v-model.trim="task.title"
       type="text"
       name=""
       id=""
       placeholder="Название задачи"
     />
-    <input
-      v-model="task.description"
-      class="form-input"
+    <my-input
+      v-model.trim="task.description"
       type="text"
       name=""
       id=""
       placeholder="Описание задачи"
     />
-    <button class="form-button" @click="createTask">Создать</button>
+    <my-button @click="createTask">Создать</my-button>
   </form>
 </template>
 
@@ -39,6 +38,7 @@ export default {
         title: '',
         description: '',
       };
+
     },
   },
 };
@@ -50,28 +50,6 @@ export default {
   flex-direction: column;
   max-width: 800px;
   min-width: 400px;
-}
-.form-input {
-  width: 100%;
-  border: 1px solid teal;
-  padding: 10px 15px;
-  margin-top: 10px;
-}
-.form-input:focus {
-  outline: none;
-}
-.form-button {
-  margin-top: 15px;
-  align-self: flex-end;
-  padding: 10px 15px;
-  background: none;
-  color: teal;
-  border: 1px solid teal;
-  transition: all 0.2s ease;
-}
-.form-button:hover {
-  background: teal;
-  color: rgb(255, 255, 255);
-  transition: all 0.2s ease;
+  gap: 15px;
 }
 </style>
