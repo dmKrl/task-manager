@@ -11,6 +11,9 @@ export const useTaskStore = defineStore('taskStore', {
       { value: 'title', name: 'По названию' },
       { value: 'status', name: 'По статусу' },
     ],
+    isEditing: false,
+    editedDescription: '',
+    editedTask: {},
   }),
   getters: {
     sortedTasks(state) {
@@ -46,5 +49,30 @@ export const useTaskStore = defineStore('taskStore', {
     addTask(task) {
       this.tasks.push(task);
     },
+    updateTaskStatus(task) {
+      const index = this.tasks.findIndex((t) => t.id === task.id);
+      if (index !== -1) {
+        this.tasks[index].status = !this.tasks[index].status;
+      }
+    },
+    // editTask(task) {
+    //   const index = this.tasks.findIndex((t) => t.id === task.id);
+    //   if (index !== -1) {
+    //     this.tasks[index] = task;
+    //   }
+    // },
+    // setEditingState(editing) {
+    //   this.isEditing = editing;
+    // },
+
+    // setEditedTask(task) {
+    //   this.editedTask = { ...task };
+    // },
+    // changeEditState() {
+    //   this.isEditing = !this.isEditing;
+    //   if (this.isEditing) {
+    //     this.setEditedTask(this.task);
+    //   }
+    // },
   },
 });

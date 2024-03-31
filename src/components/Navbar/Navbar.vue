@@ -1,6 +1,6 @@
 <template>
   <div class="navbar">
-    <div @click="$router.push('/')" class="navbar-link">Test ISF</div>
+    <div @click="$router.push('/')" class="navbar-link">Главная</div>
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {};
   display: flex;
   align-items: center;
   height: 40px;
-  background-color: lightgray;
+  background-color: #f4f4f4;
   box-shadow: 2px 2px 4px gray;
   padding: 0 15px;
   width: 50%;
@@ -28,12 +28,12 @@ export default {};
   transition: all 0.1s ease;
 }
 .navbar-link:hover {
-  color: white;
+  color: rgb(170, 170, 170);
   text-decoration: none;
   transition: all 0.1s ease;
 }
 .navbar-link:active {
-  color: teal;
+  color: #1a1a1a;
   text-decoration: none;
   transition: all 0.1s ease;
 }

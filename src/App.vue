@@ -1,7 +1,6 @@
 <template>
   <div class="app">
     <navbar></navbar>
-
     <router-view></router-view>
   </div>
 </template>
@@ -23,9 +22,12 @@ export default {
 }
 
 html {
-  background: rgb(170, 170, 170);
+  background: #f4f4f4;
+  overflow-x: hidden;
 }
-
+textarea:focus {
+  outline: none;
+}
 button {
   cursor: pointer;
 }
@@ -41,5 +43,11 @@ button {
 }
 .task-nodone {
   color: rgb(239, 53, 53);
+}
+.task-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
 }
 </style>

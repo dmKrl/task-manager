@@ -3,12 +3,13 @@
     <div>
       <div><strong>Название:</strong> {{ task.title }}</div>
       <div>
-        <strong>Состояние: </strong>
+        <strong>Статус: </strong>
         <span v-if="task.status" class="task-done">Выполнена</span>
         <span v-else class="task-nodone">Не выполнена</span>
       </div>
     </div>
     <div class="task-buttons">
+      <my-button @click="toggleTaskStatus">Изменить статус</my-button>
       <my-button @click="changeChooseTask">Открыть</my-button>
       <my-button @click="taskStore.removeTask(this.task)">Удалить</my-button>
     </div>
@@ -34,6 +35,9 @@ export default {
       this.$router.push(`/tasks/${this.task.id}`);
       this.taskStore.taskChoose = this.task;
     },
+    toggleTaskStatus() {
+      this.taskStore.updateTaskStatus(this.task);
+    },
   },
 };
 </script>
@@ -47,9 +51,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-.task-buttons {
-  display: flex;
   gap: 10px;
 }
 </style>

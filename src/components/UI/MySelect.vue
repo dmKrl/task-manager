@@ -1,6 +1,6 @@
 <template>
   <select v-model="taskStore.selectedSort" @change="updateSortBy">
-    <option disabled value="">Выберите из списка</option>
+    <option disabled value="">Сортировать по:</option>
     <option
       v-for="option in this.taskStore.sortOptions"
       :key="option.value"

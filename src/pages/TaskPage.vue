@@ -2,8 +2,12 @@
   <div class="wrapper">
     <div class="container">
       <h1>Страница с задачами</h1>
-      <my-input placeholder="Поиск..." v-model="taskStore.searchQuery" />
-      <div class="app__btns">
+      <my-input
+        placeholder="Поиск..."
+        v-model="taskStore.searchQuery"
+        type="search"
+      />
+      <div class="app__buttons">
         <my-button @click="this.taskStore.setDialogVisible(true)"
           >Создать задачу</my-button
         >
@@ -38,7 +42,7 @@ export default {
 <style>
 .wrapper {
   width: 100vw;
-  height: 100vh;
+  height: 85vh;
 }
 
 .container {
@@ -49,14 +53,14 @@ export default {
   max-width: 1440px;
   margin: 0 auto;
   padding: 20px;
-  background: rgb(224, 224, 224);
+  background: #f4f4f4;
 }
 .container h1 {
   margin-bottom: 20px;
 }
-.app__btns {
+.app__buttons {
   display: flex;
-  margin-top: 20px;
+  margin: 20px 0px;
   gap: 20px;
 }
 </style>

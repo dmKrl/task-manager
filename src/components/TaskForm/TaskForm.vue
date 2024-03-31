@@ -77,4 +77,9 @@ export default {
 .error-message {
   color: red;
 }
+@media (max-width: 401px) {
+  .form {
+    min-width: 260px;
+  }
+}
 </style>
