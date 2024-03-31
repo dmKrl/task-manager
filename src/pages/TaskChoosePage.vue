@@ -67,7 +67,8 @@ h2 span {
   align-items: center;
   gap: 12px;
   padding: 20px;
-  background-color: #e4e4e4;
+  background-color: #f4f4f4;
+  box-shadow: 2px 2px 4px gray;
   border-radius: 12px;
 }
 .task-choose__content {
