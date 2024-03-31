@@ -6,8 +6,6 @@ import { createPinia } from 'pinia';
 
 const app = createApp(App);
 
-console.log(components);
-
 components.forEach((component) => {
   app.component(component.name, component);
 });

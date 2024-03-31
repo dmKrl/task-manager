@@ -10,7 +10,7 @@
     </div>
     <div class="task-buttons">
       <my-button @click="changeChooseTask">Открыть</my-button>
-      <my-button @click="$emit('removeTask', task)">Удалить</my-button>
+      <my-button @click="taskStore.removeTask(this.task)">Удалить</my-button>
     </div>
   </div>
 </template>

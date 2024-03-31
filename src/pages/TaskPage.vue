@@ -2,13 +2,17 @@
   <div class="wrapper">
     <div class="container">
       <h1>Страница с задачами</h1>
-      <my-button @click="this.taskStore.setDialogVisible(true)"
-        >Создать задачу</my-button
-      >
+      <my-input placeholder="Поиск..." v-model="taskStore.searchQuery" />
+      <div class="app__btns">
+        <my-button @click="this.taskStore.setDialogVisible(true)"
+          >Создать задачу</my-button
+        >
+        <my-select></my-select>
+      </div>
       <my-dialog v-model:show="this.taskStore.dialogVisible">
-        <task-form @create="createTask" />
+        <task-form />
       </my-dialog>
-      <task-list :tasks="tasks" @removeTask="removeTask" />
+      <task-list />
     </div>
   </div>
 </template>
@@ -25,44 +29,8 @@ export default {
   },
   data() {
     return {
-      tasks: [
-        {
-          id: 1,
-          title: 'Задача 1',
-          status: false,
-          description: 'Описание ',
-        },
-        {
-          id: 2,
-          title: 'Задача 2',
-          status: false,
-          description: 'Описание ',
-        },
-        {
-          id: 3,
-          title: 'Задача 3',
-          status: true,
-          description: 'Описание ',
-        },
-        {
-          id: 4,
-          title: 'Задача 4',
-          status: false,
-          description: 'Описание ',
-        },
-      ],
       taskStore: useTaskStore(),
-      dialogVisible: false,
     };
-  },
-  methods: {
-    createTask(task) {
-      this.tasks.push(task);
-      this.taskStore.setDialogVisible(false);
-    },
-    removeTask(task) {
-      this.tasks = this.tasks.filter((t) => t.id !== task.id);
-    },
   },
 };
 </script>
@@ -82,5 +50,13 @@ export default {
   margin: 0 auto;
   padding: 20px;
   background: rgb(224, 224, 224);
+}
+.container h1 {
+  margin-bottom: 20px;
+}
+.app__btns {
+  display: flex;
+  margin-top: 20px;
+  gap: 20px;
 }
 </style>
