@@ -28,7 +28,7 @@ Pinia;
 
 ## Установка и запуск проекта:
 
-Необходимо клонировать репозиторий: git repo clone dm_krl/test-project-isf;  
+Необходимо клонировать репозиторий: git repo clone dm_krl/task-manager;  
 Установить заисимости: npm install;  
 Запустить приложение: npm run serve;  
 Откройте http://localhost:8080, чтобы просмотреть приложение.  
